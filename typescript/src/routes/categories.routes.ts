@@ -14,6 +14,7 @@ categoriesRoutes.post('/', (request, response) => {
 });
 
 categoriesRoutes.get('/', (request, response) => {
+  console.log('sabonete');
   return listCategoriesController.handle(request, response);
 });
 
