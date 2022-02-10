@@ -5,6 +5,6 @@ export interface ICreateCarDTO {
   license_plate: string;
   fine_amount: number;
   brand: string;
-  available: boolean;
+  available?: boolean;
   category_id: string;
 }
