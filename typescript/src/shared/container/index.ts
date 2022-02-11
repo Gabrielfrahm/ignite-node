@@ -2,6 +2,7 @@ import { container } from 'tsyringe';
 
 import { UsersRepository } from '@modules/account/infra/typeorm/repositories/UsersRepository';
 import { IUsersRepository } from '@modules/account/repositories/IUsersRepository';
+import { CarsRepository } from '@modules/cars/infra/typeorm/repositories/CarsRepository';
 import { CategoriesRepository } from '@modules/cars/infra/typeorm/repositories/CategoriesRepository';
 import { SpecificationRepository } from '@modules/cars/infra/typeorm/repositories/SpecificationRepository';
 import { ICarsRepository } from '@modules/cars/repositories/ICarsRepository';
@@ -27,4 +28,4 @@ container.registerSingleton<IUsersRepository>(
 );
 
 // car
-// container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
+container.registerSingleton<ICarsRepository>('CarsRepository', CarsRepository);
