@@ -1,5 +1,4 @@
 import { hash } from 'bcrypt';
-import { getConnection } from 'typeorm';
 import { v4 as uuidV4 } from 'uuid';
 
 import createConnection from '../index';
@@ -11,7 +10,8 @@ async function create(): Promise<void> {
   const password = await hash('admin', 8);
 
   await connection.query(
-    `INSERT INTO USERS(id, name ,email, password, "isAdmin", created_at, driver_license) values('${id}', 'admin', 'admin@admin.com', '${password}', true, 'now()', 'xxxx-123')`
+    `INSERT INTO USERS(id, name ,email, password, "isAdmin", created_at, driver_license)
+      values('${id}', 'admin', 'admin@admin.com', '${password}', true, 'now()', 'xxxx-123')`
   );
 
   await connection.close();
