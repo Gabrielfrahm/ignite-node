@@ -9,15 +9,16 @@ interface IRequest {
   name?: string;
 }
 
-// injectable();
-class ListCarUseCase {
+@injectable()
+class ListAvailableCarUseCase {
   constructor(
-    // @inject('CarsRepository')
+    @inject('CarsRepository')
     private carsRepository: ICarsRepository
   ) {}
+
   async execute({ name, brand, category_id }: IRequest): Promise<Car[]> {
     return this.carsRepository.findAllAvailable(brand, category_id, name);
   }
 }
 
-export { ListCarUseCase };
+export { ListAvailableCarUseCase };
