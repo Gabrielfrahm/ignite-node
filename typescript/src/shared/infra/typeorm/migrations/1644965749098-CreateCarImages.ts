@@ -14,6 +14,7 @@ export class CreateCarImages1644965749098 implements MigrationInterface {
           {
             name: 'id',
             type: 'uuid',
+            isPrimary: true,
           },
           {
             name: 'car_id',

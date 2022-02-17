@@ -16,6 +16,7 @@ export class CreateSpecificationsCars1644882399662
           {
             name: 'car_id',
             type: 'uuid',
+            isPrimary: true,
           },
           {
             name: 'specification_id',
